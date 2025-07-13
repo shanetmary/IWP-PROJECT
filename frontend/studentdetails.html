@@ -17,13 +17,15 @@
     <nav class="nav-links">
       <!-- Add nav links here if needed -->
     </nav>
- <a href="index.html" class="home-button">
-    <img src="home.png" alt="Home" />
-  </a>
   </header>
 
   <main>
     <section class="form-container">
+       <div class="form-header">
+    <a href="index.html" class="home-button">
+      <img src="home.png" alt="Home" />
+    </a>
+  </div>
       <a href="interest-selection.html" class="back-arrow">← Back </a>
       <h2>Student Details:</h2>
 
@@ -78,7 +80,7 @@
 
         <div class="form-group">
           <label for="cgpa10">CGPA (_/10):</label>
-          <input type="number" id="cgpa10" name="cgpa10" step="0.01" required />
+         <input type="number" id="cgpa10" name="cgpa10" step="0.01" readonly />
         </div>
 
         <h2>12th Details:</h2>
@@ -93,15 +95,16 @@
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="percentage12">Percentage:</label>
-          <input type="number" id="percentage12" name="percentage12" step="0.01" required />
-        </div>
+      <div class="form-group">
+  <label for="percentage12">Percentage:</label>
+  <input type="number" id="percentage12" name="percentage12" step="0.01" required />
+</div>
 
-        <div class="form-group">
-          <label for="cgpa12">CGPA (_/10):</label>
-          <input type="number" id="cgpa12" name="cgpa12" step="0.01" required />
-        </div>
+<div class="form-group">
+  <label for="cgpa12">CGPA (_/10):</label>
+  <input type="number" id="cgpa12" name="cgpa12" step="0.01" readonly />
+</div>
+
 
         <h2>B.Tech Sem Details:</h2>
         <div class="form-group">
@@ -190,7 +193,8 @@
 
 <div class="form-group">
   <label for="overallcgpa">Overall CGPA:</label>
-  <input type="number" id="overallcgpa" name="overallcgpa" step="0.01" required />
+  <input type="number" id="overallcgpa" name="overallcgpa" step="0.01" readonly />
+
 </div>
 
 <!-- ✅ Submit button directly below -->
@@ -201,6 +205,46 @@
       </form>
     </section>
   </main>
+<script>
+  // Convert 10th percentage to CGPA
+// Convert 10th percentage to CGPA (max 10)
+document.getElementById('percentage10').addEventListener('input', function () {
+  const percent = parseFloat(this.value);
+  let cgpa = !isNaN(percent) ? (percent / 9.5).toFixed(2) : '';
+  if (cgpa > 10) cgpa = 10.00;
+  document.getElementById('cgpa10').value = cgpa;
+});
+
+// Convert 12th percentage to CGPA (max 10)
+document.getElementById('percentage12').addEventListener('input', function () {
+  const percent = parseFloat(this.value);
+  let cgpa = !isNaN(percent) ? (percent / 9.5).toFixed(2) : '';
+  if (cgpa > 10) cgpa = 10.00;
+  document.getElementById('cgpa12').value = cgpa;
+});
+
+  // Calculate overall B.Tech CGPA
+  function calculateOverallCGPA() {
+    let total = 0;
+    let count = 0;
+
+    for (let i = 1; i <= 8; i++) {
+      const val = parseFloat(document.getElementById(`sem${i}cgpa`).value);
+      if (!isNaN(val)) {
+        total += val;
+        count++;
+      }
+    }
+
+    const overall = count > 0 ? (total / count).toFixed(2) : '';
+    document.getElementById('overallcgpa').value = overall;
+  }
+
+  // Attach to semester CGPA inputs
+  for (let i = 1; i <= 8; i++) {
+    document.getElementById(`sem${i}cgpa`).addEventListener('input', calculateOverallCGPA);
+  }
+</script>
 
 </body>
 </html>
