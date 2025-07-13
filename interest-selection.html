@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Interest Selection</title>
+  <link rel="stylesheet" href="interest.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <a href="student-dashboard.html" class="back-arrow">←</a>
+    </div>
+    <h1>
+      Christ (Deemed to be University)<br />
+      Bangalore - India<br />
+      PLACEMENT PORTAL
+    </h1>
+  </header>
+
+  <div class="form-container">
+    <h2>Are You Interested in Participating in the Placement Process?</h2>
+
+    <form action="student-details.html" method="get">
+      <div class="radio-group">
+        <label class="radio-option yes-option">
+          <input type="radio" name="interest" value="yes" required /> Yes
+        </label>
+        <label class="radio-option no-option">
+          <input type="radio" name="interest" value="no" required /> No
+        </label>
+      </div>
+
+      <div class="next-button-container">
+        <button type="submit" class="next-button">Next</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
