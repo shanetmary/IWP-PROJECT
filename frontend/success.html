@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Successful</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: grid;
+      grid-template-columns: 350px 2fr 200px;
+      align-items: center;
+      background-color: #171845;
+      height: 100px;
+      color: white;
+      padding: 0px;
+    }
+
+    .logo img {
+      height: 100px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* Content */
+    .success-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 80px;
+      height: calc(100vh - 100px);
+    }
+
+    .tick {
+      width: 120px;
+      display: block;
+      margin: 10px auto 30px auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-left: 80px;
+    }
+
+    .home-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #171845;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #0e0f30;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="christlogo.jpg" alt="Christ University Logo">
+    </div>
+    <div class="navbar-title">PLACEMENT PORTAL</div>
+    <div class="spacer"></div>
+  </header>
+
+  <!-- ✅ SUCCESS CONTENT -->
+  <div class="success-container">
+    <img class="tick" src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Check Icon">
+    <h1>YOU HAVE SUCCESSFULLY COMPLETED YOUR REGISTRATION!!</h1>
+
+    <!-- ✅ Go to Home Button -->
+    <a href="index.html">
+      <button class="home-button">Go to Home</button>
+    </a>
+  </div>
+
+</body>
+</html>

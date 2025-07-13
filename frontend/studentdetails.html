@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Details</title>
+  <link rel="stylesheet" href="style1.css"/>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="christlogo.jpg" alt="Christ University Logo" />
+    </div>
+    <div class="navbar-title">PLACEMENT PORTAL</div>
+    <div class="spacer"></div>
+    <nav class="nav-links">
+      <!-- Add nav links here if needed -->
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Student Details:</h2>
+      <form action="success.html" method="get">
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required 
+          pattern="[A-Za-z\s]+" 
+         title="Only alphabets and spaces are allowed." />
+        </div>
+
+        <div class="form-group">
+          <label for="regno">Register No:</label>
+          <input type="number" id="regno" name="regno" required
+          min="1" 
+         step="1" 
+         title="Only numbers are allowed" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input type="tel" id="contact" name="contact" required
+          pattern="[0-9]{10}" 
+         maxlength="10" 
+         title="Enter exactly 10 digits"
+         required />
+        </div>
+
+        <h2>10th Details:</h2>
+        <div class="form-group">
+          <label for="board10">Board:</label>
+          <select id="board10" name="board10" required>
+            <option value="">-- Select Board --</option>
+            <option value="cbse">CBSE</option>
+            <option value="ICSE">ICSE</option>
+            <option value="state">STATE</option>
+            <option value="other">OTHER</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="percentage10">Percentage:</label>
+          <input type="number" id="percentage10" name="percentage10" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cgpa10">CGPA (_/10):</label>
+          <input type="number" id="cgpa10" name="cgpa10" step="0.01" required />
+        </div>
+
+        <h2>12th Details:</h2>
+        <div class="form-group">
+          <label for="board12">Board:</label>
+          <select id="board12" name="board12" required>
+            <option value="">-- Select Board --</option>
+            <option value="cbse">CBSE</option>
+            <option value="ICSE">ICSE</option>
+            <option value="state">STATE</option>
+            <option value="other">OTHER</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="percentage12">Percentage:</label>
+          <input type="number" id="percentage12" name="percentage12" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cgpa12">CGPA (_/10):</label>
+          <input type="number" id="cgpa12" name="cgpa12" step="0.01" required />
+        </div>
+
+        <h2>B.Tech Sem Details:</h2>
+        <div class="form-group">
+          <label for="dept">Department:</label>
+          <select id="dept" name="dept" required>
+            <option value="">-- Select Department --</option>
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="AIML">CSE (Data Science & AIML)</option>
+            <option value="EEE">Electrical and Electronics</option>
+            <option value="ECE">Electronics and Communication</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <select id="course" name="course" required>
+            <option value="">-- Select Course --</option>
+            <option value="CSE">CSE</option>
+            <option value="DS">CSE (Data Science)</option>
+            <option value="AIML">CSE (AIML)</option>
+            <option value="CYBER">CSE (Cyber Security)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sem">Current Semester:</label>
+          <select id="sem" name="sem" required>
+            <option value="">-- Select Semester --</option>
+            <option value="Sem 1">Semester 1</option>
+            <option value="Sem 2">Semester 2</option>
+            <option value="Sem 3">Semester 3</option>
+            <option value="Sem 4">Semester 4</option>
+            <option value="Sem 5">Semester 5</option>
+            <option value="Sem 6">Semester 6</option>
+            <option value="Sem 7">Semester 7</option>
+            <option value="Sem 8">Semester 8</option>
+          </select>
+        </div>
+
+        <!-- CGPA Grid -->
+        <h3>Semester CGPA out of 10:</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sem1cgpa">Sem1 CGPA:</label>
+            <input type="number" id="sem1cgpa" name="sem1cgpa" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="sem2cgpa">Sem2 CGPA:</label>
+            <input type="number" id="sem2cgpa" name="sem2cgpa" step="0.01" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sem3cgpa">Sem3 CGPA:</label>
+            <input type="number" id="sem3cgpa" name="sem3cgpa" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="sem4cgpa">Sem4 CGPA:</label>
+            <input type="number" id="sem4cgpa" name="sem4cgpa" step="0.01" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sem5cgpa">Sem5 CGPA:</label>
+            <input type="number" id="sem5cgpa" name="sem5cgpa" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="sem6cgpa">Sem6 CGPA:</label>
+            <input type="number" id="sem6cgpa" name="sem6cgpa" step="0.01" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sem7cgpa">Sem7 CGPA:</label>
+            <input type="number" id="sem7cgpa" name="sem7cgpa" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label for="sem8cgpa">Sem8 CGPA:</label>
+            <input type="number" id="sem8cgpa" name="sem8cgpa" step="0.01" />
+          </div>
+        </div>
+
+
+<div class="form-group">
+  <label for="overallcgpa">Overall CGPA:</label>
+  <input type="number" id="overallcgpa" name="overallcgpa" step="0.01" required />
+</div>
+
+<!-- ✅ Submit button directly below -->
+<div class="form-group">
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
