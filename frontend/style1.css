@@ -136,17 +136,21 @@ body {
 .back-arrow:hover {
   text-decoration: underline;
 }
-.home-button {
-  margin-left: auto;
+.form-header {
   display: flex;
-  align-items: center;
-  padding-right: 20px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
 }
 
 .home-button img {
   width: 32px;
   height: 32px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.home-button img:hover {
+  transform: scale(1.1);
 }
 
 
