@@ -152,8 +152,9 @@
     </div>
     <div class="nav-links">
       <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+
     </div>
   </div>
 
@@ -163,10 +164,25 @@
       <h2>Student Login</h2>
       <input type="text" placeholder="Student ID">
       <input type="password" placeholder="Password">
-      <button class="btn" onclick="window.location.href='student_dashboard.html'">LOGIN</button>
+      <button class="btn" onclick="validateLogin()">LOGIN</button>
+
 
     </div>
   </div>
+<script>
+  function validateLogin() {
+    const studentId = document.querySelector('input[placeholder="Student ID"]').value.trim();
+    const password = document.querySelector('input[placeholder="Password"]').value.trim();
+
+    if (!studentId || !password) {
+      alert("Please fill in both Student ID and Password.");
+      return;
+    }
+
+    // Proceed to dashboard (you can replace this with actual backend login check)
+    window.location.href = 'student_dashboard.html';
+  }
+</script>
 
   <!-- Help Button -->
   <a href="help.html" class="help-btn">Help</a>

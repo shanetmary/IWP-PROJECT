@@ -111,23 +111,6 @@
       background-color: #233e70;
     }
 
-    .help-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background-color: #0d1b3d;
-      color: white;
-      padding: 10px 25px;
-      border-radius: 50px;
-      font-size: 14px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .help-btn:hover {
-      background-color: #2c4a80;
-    }
-
     @media (max-width: 600px) {
       .login-box input {
         width: 90%;
@@ -151,8 +134,8 @@
     </div>
     <div class="nav-links">
       <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
     </div>
   </div>
 
@@ -163,13 +146,26 @@
       <h2>Admin Login</h2>
       <input type="text" placeholder="Admin ID">
       <input type="password" placeholder="Password">
-     <button class="btn" onclick="window.location.href='admin-dashboard.html'">LOGIN</button>
+     <button class="btn" onclick="validateLogin()">LOGIN</button>
+
 
     </div>
   </div>
 
-  <!-- Help Button -->
-  <a href="help.html" class="help-btn">Help</a>
+<script>
+  function validateLogin() {
+    const AdminId = document.querySelector('input[placeholder="Admin ID"]').value.trim();
+    const password = document.querySelector('input[placeholder="Password"]').value.trim();
+
+    if (!AdminId || !password) {
+      alert("Please fill in both Admin ID and Password.");
+      return;
+    }
+
+    // Proceed to dashboard (you can replace this with actual backend login check)
+    window.location.href = 'student_dashboard.html';
+  }
+</script>
 
 </body>
 </html>
