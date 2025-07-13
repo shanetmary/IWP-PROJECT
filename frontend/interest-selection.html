@@ -21,20 +21,21 @@
   <div class="form-container">
     <h2>Are You Interested in Participating in the Placement Process?</h2>
 
-    <form action="student-details.html" method="get">
-      <div class="radio-group">
+    <div class="radio-group">
+      <!-- Yes Option redirects to student-details.html -->
+      <form action="student-details.html" method="get">
         <label class="radio-option yes-option">
-          <input type="radio" name="interest" value="yes" required /> Yes
+          <input type="submit" value="Yes" class="next-button" />
         </label>
-        <label class="radio-option no-option">
-          <input type="radio" name="interest" value="no" required /> No
-        </label>
-      </div>
+      </form>
 
-      <div class="next-button-container">
-        <button type="submit" class="next-button">Next</button>
-      </div>
-    </form>
+      <!-- No Option redirects to no.html -->
+      <form action="no.html" method="get">
+        <label class="radio-option no-option">
+          <input type="submit" value="No" class="next-button" />
+        </label>
+      </form>
+    </div>
   </div>
 </body>
 </html>
